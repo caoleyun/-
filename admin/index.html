@@ -1,0 +1,83 @@
+<!--  管理员 添加文章 主页面 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <!-- 设置IE的兼容模式，可以防止IE有一些兼容错误 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 视口标签 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 网站图标 -->
+  <link rel="shortcut icon" href="/bitbug_favicon.ico" />
+
+  <!-- 上述3个meta标签必须放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>登录界面</title>
+  <!-- 链接了一个样式表 -->
+  <script src="../js/jquery-1.12.3.min.js"></script>
+  <script src="/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+	<span>文章标题：</sapn>
+	<span><input type="text" id="title" /></span>
+	
+	<span>文章分类：</sapn>
+	<span><input type="text" id="title_type" /></span>
+
+	<div>文章内容：</div>
+	<textarea name="editor1" id="editor1">&lt;p&gt;在这写文章&lt;/p&gt;</textarea>
+
+	<button id="adding_articles">添加文章</button>
+
+	<div>
+		<span>项目名称：</span>
+		<span><input type="text" id="project_name" /></span>
+		<span>项目链接：</span>
+		<span><input type="text" id="project_link" /></span>
+		<button id="adding_item">添加项目</button>
+	</div>
+
+	<script>
+		//页面加载完成后  实例化 编辑器
+		window.onload = function() {
+	        CKEDITOR.replace( 'editor1' );
+	    };
+
+
+	    $("#adding_articles").click(function(){
+	    	//得到 文章标题
+	    	let title= $("#title").val();
+	    	//得到 文章分类
+	    	let title_type= $("#title_type").val();
+	    	//得到 编辑器里的 文章内容 
+	    	let content = CKEDITOR.instances.editor1.getData();
+
+	    	//将数据 存储起来 
+	    	$.post(
+		    	"./ArticleStorage.php",
+		    	{title:title,content:content,title_type:title_type},
+		    	function(data){
+		    		console.log(data.split("*"));
+		    	}
+		    );
+
+	    });
+
+	    $("#adding_item").click(function(){
+	    	let project_name=$("#project_name").val();
+	    	let project_link=$("#project_link").val();
+
+	    	//将数据 存储起来 
+	    	$.post(
+		    	"./ItemStorage.php",
+		    	{project_name:project_name,project_link:project_link},
+		    	function(data){
+		    		console.log(data.split("*"));
+		    	}
+		    );
+
+	    });
+
+	</script>
+</body>
+</html>
