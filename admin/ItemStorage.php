@@ -3,8 +3,8 @@ header("content-Type: text/html; charset=Utf-8");
 	// 项目 存入文件夹  处理 
 	// 
 	
-	$project_name=$_POST["project_name"];//项目名称
-	$project_link=$_POST["project_link"];//项目链接
+	$project_name=$_GET["project_name"];//项目名称
+	$project_link=$_GET["project_link"];//项目链接
 	$heart=0;
 
 	

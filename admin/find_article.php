@@ -4,8 +4,8 @@ header("content-Type: text/html; charset=Utf-8");
 	//   单击文章时候查找  或则搜索查找
 	//   通过类型  文章名字得到
 	
-	$title=$_POST["title"];//标题
-	$title_type=$_POST["title_type"];//类别
+	$title=$_GET["title"];//标题
+	$title_type=$_GET["title_type"];//类别
 
 	$dir3 = iconv("UTF-8", "GBK", "./artivle/type/".$title_type."/type.json");//中文目录
 	//打开文件夹  创建文件   先初始化time.json文件

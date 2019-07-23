@@ -1,8 +1,8 @@
 <?php 
 	//   heart 个数保存
 	
-	$project_name=$_POST["project_name"];//项目名称
-	$heart=$_POST["heart"];//heart 个数
+	$project_name=$_GET["project_name"];//项目名称
+	$heart=$_GET["heart"];//heart 个数
 	
 	$project_name=urldecode($project_name); //URL编码！ 变变成中文
 

@@ -1,9 +1,9 @@
 <?php 
 	//   heart 个数保存
 	
-	$title=$_POST["title"];//标题
-	$title_type=$_POST["title_type"];//类别
-	$heart=$_POST["heart"];//heart 个数
+	$title=$_GET["title"];//标题
+	$title_type=$_GET["title_type"];//类别
+	$heart=$_GET["heart"];//heart 个数
 	$title=urldecode($title); //URL编码！ 变变成中文
 	$dir3 = iconv("UTF-8", "GBK", "./artivle/type/".$title_type."/type.json");//中文目录
 	//打开文件夹  创建文件   先初始化time.json文件

@@ -644,7 +644,7 @@
 		    let title=$(target).parent().parent().siblings(".my-title").html();
 		    let title_type=$(target).parent().siblings(".my-foot-box2").find(".title_type").html();
 		    console.log(title,title_type);
-		    $.post(
+		    $.get(
 		    	'./admin/change_heart.php',
 		    	{"title":title,"title_type":title_type,"heart":heart},
 		    	function(data){
@@ -673,7 +673,7 @@
 			    //后台+1 保存
 			    let project_name=$(target).parent().siblings("a").find("p").html();
 			   
-			    $.post(
+			    $.get(
 			    	'./admin/change_item_heart.php',
 			    	{"project_name":project_name,"heart":heart},
 			    	function(data){
@@ -705,7 +705,7 @@
 			}
 			$("#my-load-more").css({display:"none"});//更多 消失
 			$("#my-lodding").css({display:"block"});//加载条出现
-			$.post(
+			$.get(
 				"./admin/search_article.php",
 				{"start":leftstart,"end":leftend,"text":mytext},
 				function(Data){
@@ -776,7 +776,7 @@
 			let re = new RegExp(regu);
 			let TorF=re.test(mytext1);//全部为空 为 true
 			if(mytext1!==""&&TorF!==true){
-				$.post(
+				$.get(
 					"./admin/search_article.php",
 					{"start":start,"end":end,"text":mytext1},
 					function(Data){
@@ -804,7 +804,7 @@
 				let re = new RegExp(regu);
 				let TorF=re.test(mytext1);//全部为空 为 true
 				if(mytext1!==""&&TorF!==true){
-					$.post(
+					$.get(
 						"./admin/search_article.php",
 						{"start":start,"end":end,"text":mytext1},
 						function(Data){
@@ -878,7 +878,7 @@
 		    		$("#my-load-more").css({display:"none"});//更多 消失
 					$("#my-lodding").css({display:"block"});//加载条出现
 		    		//读取文章
-				    $.post(
+				    $.get(
 				    	"./admin/get_article.php",
 				    	{start:leftstart,end:leftend,timeORtype:timeORtype},
 				    	function(Data){
@@ -939,7 +939,7 @@
 		    	$("#my-new-Articles").html("");
 		    	
 		    		//读取文章
-				    $.post(
+				    $.get(
 				    	"./admin/get_article.php",
 				    	{start:rightstart,end:rightend,timeORtype:timeORtype},
 				    	function(Data){
@@ -1019,7 +1019,7 @@
 		   
 		    	
 		    	//交给后台找出 文章
-		    	$.post(
+		    	$.get(
 		    		"./admin/find_article.php",
 		    		{"title":title,"title_type":title_type},
 		    		function(data){
@@ -1125,7 +1125,7 @@
 				// var time = sessionStorage.getItem("time");
 
 				//得到 个人分类的 类名  及结构
-				$.post(
+				$.get(
 		    		"./admin/Articles_classification.php",
 		    		function(data){
 		    			let k=leftstart;
@@ -1174,7 +1174,7 @@
 				$("#my-lodding").css({display:"block"});//加载条出现
 
 				//得到 个人分类的 类名  及结构
-				$.post(
+				$.get(
 		    		"./admin/Articles_classification.php",
 		    		function(data){
 		    			let k=leftstart;
@@ -1246,7 +1246,7 @@
 				$("#my-lodding").css({display:"block"});//加载条出现
 
 				//得到 个人分类的 类名  及结构
-				$.post(
+				$.get(
 		    		"./admin/show_item.php",
 		    		{"start":rightstart,"end":rightend},
 		    		function(Data){
@@ -1478,7 +1478,7 @@
 				var exampleInputPassword1=$("#exampleInputPassword1").val()
 
 				//提交后台验证
-				$.post(
+				$.get(
 					"./txt/password.php",
 					{exampleInputEmail1:exampleInputEmail1,exampleInputPassword1:exampleInputPassword1},
 					function(result){

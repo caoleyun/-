@@ -4,9 +4,9 @@ header("content-Type: text/html; charset=Utf-8");
 	//  判断 是不是 按类型 返回数据   或则直接按时间返回
 	//  注意 自定义类型 不能是 time  后期注意
 	
-	$start=$_POST["start"];//开始的下标
-	$end=$_POST["end"];//结束的下标
-	$timeORtype=$_POST["timeORtype"];//判断 是不是 按类型 返回数据   或则直接按时间返回
+	$start=$_GET["start"];//开始的下标
+	$end=$_GET["end"];//结束的下标
+	$timeORtype=$_GET["timeORtype"];//判断 是不是 按类型 返回数据   或则直接按时间返回
 	$timeORtype=urldecode($timeORtype); //URL编码！ 变变成中文
 	if($timeORtype=="time"){
 		//打开文件夹  创建文件   

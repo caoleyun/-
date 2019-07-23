@@ -3,8 +3,8 @@ header("content-Type: text/html; charset=Utf-8");
 	//  通过 限制的  项目 条数 上下限   返回 一定区域的 项目
 
 	
-	$start=$_POST["start"];//开始的下标
-	$end=$_POST["end"];//结束的下标
+	$start=$_GET["start"];//开始的下标
+	$end=$_GET["end"];//结束的下标
 
 		//打开文件夹  创建文件   
 		$myfile0 = fopen("./artivle/item/time.json", "r")or die("Unable to open file!");

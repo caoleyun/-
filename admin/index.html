@@ -53,7 +53,7 @@
 	    	let content = CKEDITOR.instances.editor1.getData();
 
 	    	//将数据 存储起来 
-	    	$.post(
+	    	$.get(
 		    	"./ArticleStorage.php",
 		    	{title:title,content:content,title_type:title_type},
 		    	function(data){
@@ -68,7 +68,7 @@
 	    	let project_link=$("#project_link").val();
 
 	    	//将数据 存储起来 
-	    	$.post(
+	    	$.get(
 		    	"./ItemStorage.php",
 		    	{project_name:project_name,project_link:project_link},
 		    	function(data){

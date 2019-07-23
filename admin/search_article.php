@@ -4,9 +4,9 @@
 	//   
 	//   通过 文章名字得到    耗时   后 优化！！！！
 	
-	$start=$_POST["start"];//开始的下标
-	$end=$_POST["end"];//结束的下标
-	$title=$_POST["text"];//标题
+	$start=$_GET["start"];//开始的下标
+	$end=$_GET["end"];//结束的下标
+	$title=$_GET["text"];//标题
 	$title=urldecode($title); //URL编码！ 变变成中文
 // echo $title;
 // echo $start;

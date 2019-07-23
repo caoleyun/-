@@ -3,9 +3,9 @@ header("content-Type: text/html; charset=Utf-8");
 	// 文章 存入文件夹  处理 
 	// 
 	
-	$title=$_POST["title"];//标题
-	$title_type=$_POST["title_type"];//类别
-	$content=$_POST["content"];//文章内容
+	$title=$_GET["title"];//标题
+	$title_type=$_GET["title_type"];//类别
+	$content=$_GET["content"];//文章内容
 	$heart=0;
 
 	
