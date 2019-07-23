@@ -879,7 +879,7 @@
 					$("#my-lodding").css({display:"block"});//加载条出现
 		    		//读取文章
 				    $.post(
-				    	"/admin/get_article.php",
+				    	"./admin/get_article.php",
 				    	{start:leftstart,end:leftend,timeORtype:timeORtype},
 				    	function(Data){
 				    		//字符串 转json 对象
@@ -940,7 +940,7 @@
 		    	
 		    		//读取文章
 				    $.post(
-				    	"/admin/get_article.php",
+				    	"./admin/get_article.php",
 				    	{start:rightstart,end:rightend,timeORtype:timeORtype},
 				    	function(Data){
 				    		//字符串 转json 对象
@@ -1479,7 +1479,7 @@
 
 				//提交后台验证
 				$.post(
-					"/txt/password.php",
+					"./txt/password.php",
 					{exampleInputEmail1:exampleInputEmail1,exampleInputPassword1:exampleInputPassword1},
 					function(result){
 						// console.log(result);
